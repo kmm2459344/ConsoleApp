@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35222.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "3DDungeonGame", "3DDungeonGame.vcxproj", "{54B876B4-F0AD-408C-98B0-0E982535C91B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{54B876B4-F0AD-408C-98B0-0E982535C91B}.Debug|x64.ActiveCfg = Debug|x64
+		{54B876B4-F0AD-408C-98B0-0E982535C91B}.Debug|x64.Build.0 = Debug|x64
+		{54B876B4-F0AD-408C-98B0-0E982535C91B}.Debug|x86.ActiveCfg = Debug|Win32
+		{54B876B4-F0AD-408C-98B0-0E982535C91B}.Debug|x86.Build.0 = Debug|Win32
+		{54B876B4-F0AD-408C-98B0-0E982535C91B}.Release|x64.ActiveCfg = Release|x64
+		{54B876B4-F0AD-408C-98B0-0E982535C91B}.Release|x64.Build.0 = Release|x64
+		{54B876B4-F0AD-408C-98B0-0E982535C91B}.Release|x86.ActiveCfg = Release|Win32
+		{54B876B4-F0AD-408C-98B0-0E982535C91B}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4BD400A0-2383-4C3A-AEF3-1B9AED0EA34E}
+	EndGlobalSection
+EndGlobal
