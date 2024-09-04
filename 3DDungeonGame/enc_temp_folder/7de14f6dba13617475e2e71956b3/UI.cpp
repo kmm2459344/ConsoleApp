@@ -76,7 +76,6 @@ void MovePlayerForMap(Stage* stage, Key c)
 	}
 }
 
-
 	// ƒvƒŒ[ƒ„ˆÚ“®(For3D)
 	void MovePlayerFor3D(Stage * stage, Key c)
 	{
