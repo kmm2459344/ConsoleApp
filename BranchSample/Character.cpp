@@ -7,6 +7,9 @@
 #include <stdio.h>   // printf()
 #include <stdlib.h>  // rand(), RAND_MAX
 
+// ŠÖ”ƒvƒƒgƒ^ƒCƒv
+void setPrintColor(Character* ch);
+
 // Žô•¶‚ÌÁ”ïMP
 static const int SPELL_COST = 3;
 
@@ -61,16 +64,20 @@ void UseSpellCharacter(Character* ch)
 // ƒvƒŒ[ƒ„•\Ž¦‚ðs‚¤
 void IndicatePlayer(Character* ch)
 {
+	setPrintColor(ch);
 	printf("%s\n", ch->name);
 	printf("‚g‚oF%3d^%d@‚l‚oF%2d^%d\n", ch->hp, ch->maxHp, ch->mp, ch->maxMp);
+	printf(EscDEFAULT);
 }
 // ƒGƒlƒ~[•\Ž¦‚ðs‚¤
 void IndicateEnemy(Character* ch)
 {
+	setPrintColor(ch);
 	if (ch->isEraseAa == false) {
 		printf("%s", ch->aa);
 	}
 	printf("i‚g‚oF%3d^%dj\n", ch->hp, ch->maxHp);
+	printf(EscDEFAULT);
 }
 // UŒ‚—Í‚©‚ç—^‚¦‚éƒ_ƒ[ƒW‚ðŒvŽZ
 int CalcDamage(Character* ch)
@@ -97,4 +104,18 @@ bool IsEscapeCharacter(Character* ch)
 void SetEraseAa(Character* ch)
 {
 	ch->isEraseAa = true;
+}
+
+void setPrintColor(Character* ch)
+{
+	float rate = (float)ch->hp / ch->maxHp;
+	if (rate < 0.25f) {
+		printf(EscRED);
+	}
+	else if (rate < 0.5f) {
+		printf(EscYELLOW);
+	}
+	else {
+		printf(EscWHITE);
+	}
 }

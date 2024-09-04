@@ -34,6 +34,7 @@ void game()
 	Character boss;
 	Character zako;
 	TurnBattle btl;
+
 	SetCharacter(&player,
 		100,        // HP
 		15,         // MP
@@ -56,6 +57,7 @@ void game()
 		"Å^ÅEÑDÅEÅ_\n" // ÉAÉXÉLÅ[ÉAÅ[Ég
 		"Å`Å`Å`Å`Å`"
 	);
+
 	SetTurnBattle(&btl, &player, &boss);
 	StartTurnBattle(&btl);
 	IntroTurnBattle(&btl);
