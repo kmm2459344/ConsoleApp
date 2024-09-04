@@ -109,10 +109,10 @@ void SetEraseAa(Character* ch)
 void setPrintColor(Character* ch)
 {
 	float rate = (float)ch->hp / ch->maxHp;
-	if (rate < 0.25f) {
+	if (rate < 0.2f) {
 		printf(EscRED);
 	}
-	else if (rate < 0.5f) {
+	else if (rate < 0.3333f) {
 		printf(EscYELLOW);
 	}
 	else {
