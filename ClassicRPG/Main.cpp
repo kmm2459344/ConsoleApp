@@ -106,6 +106,12 @@ static void game()
 			if (IsBattleEncount(spec)) {
 				// ★ここをコーディングしてください。
 				// １６分の1の確率でザコ戦闘を行います
+				SetPlayerPosition(stage, playerX, playerY);
+				if (IsBattleEncount(spec)) {
+					if (GetRand(16) == 0) {
+						BattleZako(stage);
+					}
+				}
 			}
 			break;
 		}
