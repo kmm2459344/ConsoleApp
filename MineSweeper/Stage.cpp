@@ -167,6 +167,8 @@ void DrawScreen(Stage* stage)
 			if (IsCursorPosition(stage, x, y) && stage->isClear == false) {
 				// ★ここをコーディングしてください
 				// 爆発時にAA_EXPLOSION をそれ以外は AA_CURSORを表示します
+				const char* tmp = stage->isExplosion ? AA_EXPLOSION : AA_CURSOR;
+				printf(tmp);
 			}
 			else {
 				if (IsFlag(cell)) {

@@ -39,13 +39,13 @@ void game()
 		case ARROW_UP:
 			// ★ここをコーディングしてください。
 			// MoveCursor()を呼びます
-			MoveCursor(stage, 0, 1);
+			MoveCursor(stage, 0, -1);
 
 			break;
 		case ARROW_DOWN:
 			// ★ここをコーディングしてください。
 			// MoveCursor()を呼びます
-			MoveCursor(stage, 0, -1);
+			MoveCursor(stage, 0, 1);
 			break;
 		case ARROW_LEFT:
 			// ★ここをコーディングしてください。
