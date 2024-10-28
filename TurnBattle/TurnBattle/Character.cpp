@@ -1,4 +1,4 @@
-//======================================　
+//======================================
 //	キャラクター
 //======================================
 #include "Character.h"
@@ -6,6 +6,9 @@
 #include <string.h>  // strcpy()
 #include <stdio.h>   // printf()
 #include <stdlib.h>  // rand(), RAND_MAX
+
+// 関数プロトタイプ
+void setPrintColor(Character* ch);
 
 // 呪文の消費MP
 static const int SPELL_COST = 3;
@@ -61,31 +64,26 @@ void UseSpellCharacter(Character* ch)
 // プレーヤ表示を行う
 void IndicatePlayer(Character* ch)
 {
-	// ★ここをコーディングしてください。
-	// 仕様を参考に、プレーヤの表示を行います。
-	printf("%s\n",ch->name);
-	printf("ＨＰ ： %3d/100　ＭＰ　：　%2d/15\n", ch->hp, ch->mp);
+	setPrintColor(ch);
+	printf("%s\n", ch->name);
+	printf("ＨＰ：%3d／%d　ＭＰ：%2d／%d\n", ch->hp, ch->maxHp, ch->mp, ch->maxMp);
+	printf(EscDEFAULT);
 }
 // エネミー表示を行う
 void IndicateEnemy(Character* ch)
 {
-	// ★ここをコーディングしてください。
-	// 仕様を参考に、エネミーの表示を行います。
-	// エネミーが死亡すると、アスキーアートは消します(表示しません)
+	setPrintColor(ch);
 	if (ch->isEraseAa == false) {
-		printf("%s\n", ch->aa);
+		printf("%s", ch->aa);
 	}
-	printf("　（ＨＰ　：　%3d/%d）\n", ch->hp, ch->maxHp);
+	printf("（ＨＰ：%3d／%d）\n", ch->hp, ch->maxHp);
+	printf(EscDEFAULT);
 }
 // 攻撃力から与えるダメージを計算
 int CalcDamage(Character* ch)
 {
-	// ★ここをコーディングしてください。
-	// 敵に与えるダメージは、1～attack の乱数です。
-	// Utility.cpp の GetRand(int max)を使用してください。
-	int dam = GetRand(ch->attack) + 1;
-	return dam;
-
+	int dmg = GetRand(ch->attack) + 1;
+	return dmg;
 }
 // 名前を取得
 const char* GetName(Character* ch)
@@ -106,4 +104,18 @@ bool IsEscapeCharacter(Character* ch)
 void SetEraseAa(Character* ch)
 {
 	ch->isEraseAa = true;
+}
+
+void setPrintColor(Character* ch)
+{
+	float rate = (float)ch->hp / ch->maxHp;
+	if (rate < 0.25f) {
+		printf(EscRED);
+	}
+	else if (rate < 0.5f) {
+		printf(EscYELLOW);
+	}
+	else {
+		printf(EscWHITE);
+	}
 }

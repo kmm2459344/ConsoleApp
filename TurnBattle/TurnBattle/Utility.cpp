@@ -1,3 +1,4 @@
+
 //======================================
 //	ユーティリティ
 //======================================
@@ -17,6 +18,16 @@ const char* EscMAZENTA = "\x1b[35m";
 const char* EscCYAN = "\x1b[36m";
 const char* EscWHITE = "\x1b[37m";
 const char* EscDEFAULT = "\x1b[39m";
+
+const char* EscBgBLACK = "\x1b[40m";
+const char* EscBgRED = "\x1b[41m";
+const char* EscBgGREEN = "\x1b[42m";
+const char* EscBgYELLOW = "\x1b[43m";
+const char* EscBgBLUE = "\x1b[44m";
+const char* EscBgMAZENTA = "\x1b[45m";
+const char* EscBgCYAN = "\x1b[46m";
+const char* EscBgWHITE = "\x1b[47m";
+const char* EscBgDEFAULT = "\x1b[49m";
 
 // 乱数初期化
 void InitRand()
@@ -66,6 +77,27 @@ void ClearScreen()
 		SetConsoleMode(h, 0x07);
 	}
 	printf("\x1b[2J"	// 画面クリア
-		"\x1b[0;0H");	// カーソルを0,0に
+		"\x1b[1;1H");	// カーソルを1,1に
 #endif
+}
+// カーソル位置セット
+void PrintCursor(int curx, int cury)
+{
+	// curx.curyは(1,1)から
+	printf("\x1b[%d;%dH", cury, curx);
+}
+// カーソル保存
+void SaveCursor()
+{
+	printf("\x1b[s");
+}
+// カーソル復元
+void RestoreCursor()
+{
+	printf("\x1b[u");
+}
+// 時間待ち(m秒)
+void Sleep_mSec(int mSec)
+{
+	Sleep(mSec);
 }

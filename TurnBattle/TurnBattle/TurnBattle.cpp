@@ -18,8 +18,7 @@ void SetTurnBattle(TurnBattle* btl, Character* player, Character* enemy)
 void IntroTurnBattle(TurnBattle* btl)
 {
 	DrawBattleScreen(btl);
-	// ★ここで「(敵の名前)が　あらわれた!!」を表示してください
-	printf("%sが　あらわれた！！",GetName(btl->enemy));
+	printf("%sが　あらわれた!!\n", GetName(btl->enemy));
 	WaitKey();
 }
 // バトル開始
@@ -45,8 +44,7 @@ bool ExecPlayerTurn(TurnBattle* btl, Command cmd)
 	if (IsDeadCharacter(btl->enemy)) {
 		SetEraseAa(btl->enemy);
 		DrawBattleScreen(btl);
-		// ★ここで「(敵の名前)を　たおした!」を表示してください
-		printf("%sを　たおした！\n", GetName(btl->enemy));
+		printf("%sを　たおした!\n", GetName(btl->enemy));
 		WaitKey();
 		return true;
 	}
@@ -58,7 +56,6 @@ bool ExecEnemyTurn(TurnBattle* btl, Command cmd)
 	execCommand(btl, cmd, btl->enemy, btl->player);
 	if (IsDeadCharacter(btl->player)) {
 		DrawBattleScreen(btl);
-		// ★ここで「"あなたは　しにました」を表示してください
 		printf("あなたは　しにました\n");
 		WaitKey();
 		return true;
@@ -72,44 +69,37 @@ static void execCommand(TurnBattle* btl, Command cmd, Character* offense, Charac
 	switch (cmd) {
 	case COMMAND_FIGHT:
 		DrawBattleScreen(btl);
-		// ★ここで「(攻撃側の名前)の　こうげき!」を表示してください
-		printf("%sの　こうげき!\n", GetName(btl->player));
+		printf("%sの　こうげき!\n", GetName(offense));
 		WaitKey();
 
 		dmg = CalcDamage(offense);
 		DamageCharacter(defense, dmg);
 		DrawBattleScreen(btl);
-		// ★ここで「(防御側の名前)に (ダメージ値)の　ダメージ!」を表示してください
-		printf("%sに　%dの　ダメージ!", GetName(defense), dmg);
-
+		printf("%sに %dの　ダメージ!\n", GetName(defense), dmg);
 		WaitKey();
 
 		break;
 	case COMMAND_SPELL:
 		if (CanSpellCharacter(offense) == false) {
 			DrawBattleScreen(btl);
-			// ★ここで「ＭＰが　たりない!」を表示してください
 			printf("ＭＰが　たりない!\n");
 			WaitKey();
 			break;
 		}
 		UseSpellCharacter(offense);
 		DrawBattleScreen(btl);
-		// ★ここで「(攻撃側の名前)は　ヒールを　となえた!」を表示してください
-		printf("%sは　ヒールを　となえた!\n", GetName(btl->player));
+		printf("%sは　ヒールを　となえた!\n", GetName(offense));
 		WaitKey();
 
 		RecoverCharacter(offense);
 		DrawBattleScreen(btl);
-		// ★ここで「(攻撃側の名前)のきずが　かいふくした!」を表示してください
-		printf("%sのきずが　かいふくした!\n", GetName(btl->player));
+		printf("%sのきずが　かいふくした!\n", GetName(offense));
 		WaitKey();
 		break;
 
 	case COMMAND_ESCAPE:
 		DrawBattleScreen(btl);
-		// ★ここで「(攻撃側の名前)は　にげだした!」を表示してください
-		printf("%sは　にげだした!\n", GetName(btl->player));
+		printf("%sは　にげだした!\n", GetName(offense));
 		WaitKey();
 		SetEscapeCharacter(offense);
 		break;
