@@ -1,9 +1,10 @@
+
 //======================================
 //	リバーシ
 //======================================
 // ★ここにインクルードガード(開始)を記入してください
-#ifndef REVERSI_H
-#define REVERSI_H
+#ifndef __REVERSI_H
+#define __REVERSI_H
 
 #include "Mode.h"
 #include "Vector2.h"
@@ -58,4 +59,4 @@ bool IsHumanPlayer(Reversi* reversi);
 //  相手を得る
 Cell GetOpponent(Cell myself);
 // ★ここにインクルードガード(終了)を記入してください
-#endif // !REVERSI_H
+#endif // __REVERSI_H

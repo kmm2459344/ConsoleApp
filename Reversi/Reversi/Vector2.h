@@ -1,9 +1,10 @@
+
 //======================================
 //	リバーシ 2Dベクター
 //======================================
 // ★ここにインクルードガード(開始)を記入してください
-#ifndef _VECTOR2_H
-#define _VECTOR2_H
+#ifndef __VECTOR2_H
+#define __VECTOR2_H
 
 typedef struct {
 	int x;
@@ -29,4 +30,4 @@ void AddVector2(Vector2* a, Vector2* b);
 Vector2 GetDirVector2(DIRECTION d);
 
 // ★ここにインクルードガード(終了)を記入してください
-#endif // _VECTOR2_H
+#endif // __VECTOR2_H

@@ -1,9 +1,10 @@
+
 //======================================
 //	リバーシ Vector2List
 //======================================
 // ★ここにインクルードガード(開始)を記入してください
-#ifndef _VECTOR2LIST_H
-#define _VECTOR2LIST_H
+#ifndef __VECTOR2_LIST_H
+#define __VECTOR2_LIST_H
 
 #include "Vector2.h"
 typedef struct {
@@ -26,4 +27,4 @@ Vector2 GetVector2List(Vector2List* list, int idx);
 void ClearVector2List(Vector2List* list);
 
 // ★ここにインクルードガード(終了)を記入してください
-#endif // _VECTOR2LIST_H
+#endif // __VECTOR2_LIST_H

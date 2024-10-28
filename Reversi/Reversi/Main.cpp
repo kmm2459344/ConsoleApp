@@ -55,20 +55,11 @@ void game(Reversi* reversi, Vector2List* v2list)
 				DrawScreen(reversi, dummyPos, IN_PLAY);
 				WaitKey();
 				// 打てるリストからランダムに選ぶ.
-				//
-				// ★ここをコーディングしてください
-				//  v2listをクリア
-				//  ListCanPlaceAll() で打てるところをリスティング
-				//  v2listから登録数を取得して
-				//  0～登録数-1の乱数を取得(インデックス)
-				//  v2listから、インデックスに対応する Vector2を取得して placePosに格納する
-				//
 				ClearVector2List(v2list);
 				ListCanPlaceAll(reversi, turn, v2list);
 				int count = GetCountVector2List(v2list);
 				int idx = GetRand(count);
 				placePos = GetVector2List(v2list, idx);
-
 			}
 			CheckCanPlace(reversi, turn, placePos, true);
 			SetBoard(reversi, placePos.x, placePos.y, turn);

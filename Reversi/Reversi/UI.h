@@ -1,9 +1,10 @@
+
 //======================================
 //	リバーシ UI
 //======================================
 // ★ここにインクルードガード(開始)を記入してください
-#ifndef  _UI_H
-#define _UI_H
+#ifndef __UI_H
+#define __UI_H
 
 #include "Mode.h"
 #include "Vector2.h"
@@ -15,4 +16,4 @@ Mode SelectMode();
 Vector2 InputPosition(Reversi* reversi);
 
 // ★ここにインクルードガード(終了)を記入してください
-#endif // ! _UI_H
+#endif // __UI_H

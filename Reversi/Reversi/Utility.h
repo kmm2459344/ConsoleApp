@@ -1,3 +1,4 @@
+
 //======================================
 //	ユーティリティ
 //======================================
@@ -36,4 +37,4 @@ bool KeyAvailable();
 // スクリーン消去
 void ClearScreen();
 
-#endif // __UTILITY_H#pragma once
+#endif // __UTILITY_H

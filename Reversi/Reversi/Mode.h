@@ -1,9 +1,10 @@
+
 //======================================
 //	リバーシ Mode
 //======================================
 // ★ここにインクルードガード(開始)を記入してください
-#ifndef MODE_H
-#define MODE_H
+#ifndef __MODE_H
+#define __MODE_H
 
 typedef enum {
 	MODE_1P,
@@ -12,5 +13,5 @@ typedef enum {
 	MODE_MAX,
 } Mode;
 
-// ★ここにインクルードガード(終了)を記入してください#pragma once
-#endif // !MODE_H
+// ★ここにインクルードガード(終了)を記入してください
+#endif // __MODE_H
